@@ -1,0 +1,26 @@
+h2{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+div{
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 40px;
+}
+
+input{
+    width: 230px;
+    height: 30px;
+}
+
+button{
+    width: 120px;
+    height: 30px;
+}

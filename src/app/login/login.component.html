@@ -1,0 +1,8 @@
+
+<h2>Enter Authorization Key: </h2>
+<div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <input [formControl]="authKeyControl" type="text"><br><br>
+        <button [disabled]="loginForm.invalid">Login</button>
+    </form>
+</div>

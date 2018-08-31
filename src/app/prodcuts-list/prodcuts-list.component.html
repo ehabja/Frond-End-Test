@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="up">
+        <div class="right">
+            <form [formGroup]="productForm">
+                <table class="form">
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput [formControl]="productNameControl" type="text" placeholder="Product Name" />
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput [formControl]="descriptionControl" type="text" placeholder="Description" />
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput [formControl]="skuControl" type="text" placeholder="SKU"/>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <input matInput [formControl]="costControl" type="number" placeholder="Price">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="formBtn" [hidden]="productForm.invalid || disable!=1" (click)="editProduct()">Edit</button>
+                        </td>
+                        <td>
+                            <button class="formBtn" [hidden]="productForm.invalid  || disable==1" (click)="addProduct()">Add</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <div class="down">
+        <table class="productsTable" border="1">
+            <tr>
+                <th>Index</th>
+                <th>NAME</th>
+                <th>SKU</th>
+                <th>COST</th>
+                <th> </th>
+                <th> </th>
+            </tr>
+            <tr *ngFor="let p of product ; let i=index">
+                <td (click)="showDescription(p)">{{i}}</td>
+                <td (click)="showDescription(p)">{{p.name}}</td>
+                <td (click)="showDescription(p)">{{p.sku}}</td>
+                <td (click)="showDescription(p)">{{p.cost}}</td>
+                <td class="click" (click)="editProductButton(p)">EDIT</td>
+                <td class="click" (click)="deleteProduct(p)">DELETE</td>
+            </tr>
+        </table>
+    </div>
+</div>
